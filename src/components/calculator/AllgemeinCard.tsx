@@ -146,15 +146,15 @@ const Field = ({
   err?: string | null;
   children: React.ReactNode;
 }) => (
-  <div>
-    <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium">
-      {label}
+  <div className="flex flex-col">
+    <label className="mb-1.5 flex min-h-[2.5rem] items-start gap-1.5 text-sm font-medium leading-tight">
+      <span className="flex-1">{label}</span>
       <HelpIcon text={help} />
     </label>
     {children}
     {err && (
-      <div className="mt-1 flex items-center gap-1 text-xs text-destructive">
-        <AlertCircle className="h-3.5 w-3.5" />
+      <div className="mt-1 flex items-start gap-1 text-xs text-destructive">
+        <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
         <span>{err}</span>
       </div>
     )}
