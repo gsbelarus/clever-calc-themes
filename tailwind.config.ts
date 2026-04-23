@@ -8,9 +8,7 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       colors: {
@@ -47,6 +45,28 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        wko: {
+          red: "hsl(var(--wko-red))",
+          "red-dark": "hsl(var(--wko-red-dark))",
+          "gray-dark": "hsl(var(--wko-gray-dark))",
+          "gray-mid": "hsl(var(--wko-gray-mid))",
+          "gray-light": "hsl(var(--wko-gray-light))",
+          section: "hsl(var(--wko-section-bg))",
+        },
+        result: {
+          DEFAULT: "hsl(var(--result-bg))",
+          strong: "hsl(var(--result-bg-strong))",
+          foreground: "hsl(var(--result-foreground))",
+        },
+        slider: {
+          DEFAULT: "hsl(var(--slider-bg))",
+          foreground: "hsl(var(--slider-foreground))",
+        },
+        subsidy: {
+          DEFAULT: "hsl(var(--subsidy-accent))",
+          soft: "hsl(var(--subsidy-accent-soft))",
+        },
+        "toggle-on": "hsl(var(--toggle-on))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -64,22 +84,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

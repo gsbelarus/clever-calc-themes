@@ -2,95 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* WKO Break-Even-Rechner Design System
+   All colors HSL. Brand red, peach result panel, green slider, purple subsidy accent. */
 
 @layer base {
   :root {
+    /* Surfaces */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* WKO Brand red */
+    --primary: 4 83% 53%;            /* #ea3122 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 95%;               /* #f1f1f1 input bg */
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 88%;               /* #e0e0e0 section bg */
+    --accent-foreground: 0 0% 13%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 4 83% 53%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 4 83% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
+    /* WKO custom semantic tokens */
+    --wko-red: 4 83% 53%;            /* #ea3122 */
+    --wko-red-dark: 4 83% 45%;
+    --wko-gray-dark: 0 0% 40%;       /* #666 */
+    --wko-gray-mid: 0 0% 52%;        /* #848484 */
+    --wko-gray-light: 0 0% 95%;      /* #f1f1f1 */
+    --wko-section-bg: 0 0% 96%;
+
+    /* Result panel — peach */
+    --result-bg: 25 78% 92%;          /* light peach */
+    --result-bg-strong: 25 75% 88%;
+    --result-foreground: 0 0% 13%;
+
+    /* Slider — green */
+    --slider-bg: 142 38% 45%;         /* #3a9d6a-ish */
+    --slider-foreground: 0 0% 100%;
+
+    /* Subsidy accent — purple */
+    --subsidy-accent: 256 50% 55%;    /* purple */
+    --subsidy-accent-soft: 256 60% 96%;
+
+    /* Toggle on (green) */
+    --toggle-on: 142 50% 45%;
+
+    /* Sidebar (kept for shadcn, unused) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222 30% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 25% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 25% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 4 83% 58%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 222 18% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 222 20% 22%;
+    --accent-foreground: 0 0% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 4 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 222 20% 22%;
+    --input: 222 20% 22%;
+    --ring: 4 83% 58%;
+
+    --wko-red: 4 83% 58%;
+    --wko-red-dark: 4 83% 50%;
+    --wko-gray-dark: 0 0% 75%;
+    --wko-gray-mid: 0 0% 60%;
+    --wko-gray-light: 222 18% 18%;
+    --wko-section-bg: 222 20% 14%;
+
+    --result-bg: 22 30% 22%;
+    --result-bg-strong: 22 35% 27%;
+    --result-foreground: 0 0% 95%;
+
+    --slider-bg: 142 35% 35%;
+    --slider-foreground: 0 0% 100%;
+
+    --subsidy-accent: 256 60% 70%;
+    --subsidy-accent-soft: 256 35% 22%;
+
+    --toggle-on: 142 50% 45%;
   }
 }
 
@@ -99,7 +129,17 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   }
 }
+
+/* Print styles — only the summary block is shown */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .page-break { page-break-before: always; }
+}
+.print-only { display: none; }
