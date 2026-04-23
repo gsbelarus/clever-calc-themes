@@ -6,6 +6,7 @@ import { useCalculator } from "@/lib/calculator/CalculatorContext";
 import { showsProvision, showsStunden, showsWareneinsatz, branchen } from "@/lib/calculator/branche";
 import type { Branche } from "@/lib/calculator/types";
 import { useI18n } from "@/lib/i18n/I18nProvider";
+import type { TranslationKey } from "@/lib/i18n/translations";
 import {
   Select,
   SelectContent,
@@ -14,14 +15,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const brancheLabelKey = (b: Branche) =>
-  ({
+const brancheLabelKey = (b: Branche): TranslationKey => {
+  const map: Record<Branche, TranslationKey> = {
     dienstleistung: "branche_dienstleistung",
     gastronomie: "branche_gastronomie",
     handel: "branche_handel",
     gewerbe: "branche_gewerbe",
     provision: "branche_provision",
-  }[b]) as const;
+  };
+  return map[b];
+};
 
 export const AllgemeinCard = () => {
   const { input, patchInput, setBranche, validationError } = useCalculator();
